@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HCL AI Support</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ====================================================== -->
+    <!-- Demo Page -->
+    <!-- ====================================================== -->
+
+    <div class="page">
+
+        <div class="page-content">
+
+            <h1>Eli Lilly Support Portal</h1>
+
+            <p>
+
+                Welcome to the Support Portal.
+
+                Use the AI Assistant available at the bottom-right corner.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- Floating Chat Button -->
+    <!-- ====================================================== -->
+
+    <button
+        id="chatToggle"
+        class="chat-toggle">
+
+        <i class="fa-solid fa-comments"></i>
+
+    </button>
+
+
+    <!-- ====================================================== -->
+    <!-- Chat Widget -->
+    <!-- ====================================================== -->
+
+    <div
+        id="chatWindow"
+        class="chat-window">
+
+        <!-- ================= Header ================= -->
+
+        <div class="chat-header">
+
+            <div class="header-left">
+
+                <div class="bot-icon">
+
+                    🤖
+
+                </div>
+
+                <div>
+
+                    <h2>HCL AI Support</h2>
+
+                    <span>Online</span>
+
+                </div>
+
+            </div>
+
+            <button id="closeChat">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= User Section ================= -->
+
+        <div class="login-section">
+
+            <input
+
+                id="username"
+
+                type="text"
+
+                placeholder="Enter Username">
+
+            <input
+
+                id="email"
+
+                type="email"
+
+                placeholder="Enter Email">
+
+            <button id="fetchUserBtn">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                Fetch User
+
+            </button>
+
+            <div
+                id="userStatus"
+                class="user-status">
+
+            </div>
+
+            <select
+                id="kbSelect"
+                disabled>
+
+                <option value="Account KB">
+
+                    Account KB
+
+                </option>
+
+                <option value="Access KB">
+
+                    Access KB
+
+                </option>
+
+                <option value="Permission KB">
+
+                    Permission KB
+
+                </option>
+
+                <option value="Guidance Network KB">
+
+                    Guidance Network KB
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ================= Chat Area ================= -->
+
+        <div
+            id="chatMessages"
+            class="chat-messages">
+
+            <!-- Welcome Card -->
+
+            <div class="welcome-card">
+
+                <div class="welcome-icon">
+
+                    🤖
+
+                </div>
+
+                <h3>
+
+                    Welcome to HCL AI Support
+
+                </h3>
+
+                <p>
+
+                    Please enter your Username and Email.
+
+                    After clicking <b>Fetch User</b>,
+                    you can start chatting with the AI Assistant.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= Typing ================= -->
+
+        <div
+            id="typingIndicator"
+            class="typing-indicator">
+
+            <div class="typing-avatar">
+
+                🤖
+
+            </div>
+
+            <div class="typing-bubble">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= Footer ================= -->
+
+        <div class="chat-footer">
+
+            <input
+
+                id="messageInput"
+
+                type="text"
+
+                placeholder="Type your question..."
+
+                disabled>
+
+            <button
+
+                id="sendBtn"
+
+                disabled>
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
