@@ -13,8 +13,7 @@ const chatToggle = document.getElementById("chatToggle");
 const chatWindow = document.getElementById("chatWindow");
 const closeChat = document.getElementById("closeChat");
 
-const usernameInput = document.getElementById("username");
-const emailInput = document.getElementById("email");
+const ticketInput = document.getElementById("ticketId");
 
 const fetchUserBtn = document.getElementById("fetchUserBtn");
 
@@ -34,8 +33,8 @@ const userStatus = document.getElementById("userStatus");
 // Variables
 // =======================
 
-let username = "";
-let email = "";
+let ticketId = "";
+let currentUser = "";
 let isUserValidated = false;
 
 // =======================
@@ -90,62 +89,48 @@ messageInput.addEventListener("keydown",function(e){
 
 function validateUser() {
 
-    username = usernameInput.value.trim();
+    ticketId = ticketInput.value.trim();
 
-    email = emailInput.value.trim();
+    if (ticketId === "") {
 
-    if (username === "") {
+        alert("Please enter Ticket ID");
 
-        alert("Please enter Username");
-
-        usernameInput.focus();
+        ticketInput.focus();
 
         return;
 
     }
 
-    if (email === "") {
+    // Random active users for demo
+    const users = [
+        "jyoti-sh",
+        "brandon",
+        "sandeep.sharma",
+        "rahul.k",
+        "ankita",
+        "amit",
+        "john.smith"
+    ];
 
-        alert("Please enter Email");
-
-        emailInput.focus();
-
-        return;
-
-    }
-
-    const emailRegex =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-
-        alert("Please enter valid Email.");
-
-        emailInput.focus();
-
-        return;
-
-    }
-
-    isUserValidated = true;
+    currentUser = users[Math.floor(Math.random() * users.length)];
 
     userStatus.innerHTML =
-        `✅ Welcome <b>${username}</b>`;
+        `<span style="color:green;font-weight:600;">
+            ✅ ${currentUser} user is active
+        </span>`;
+
+    isUserValidated = true;
 
     messageInput.disabled = false;
 
     sendBtn.disabled = false;
 
-    kbSelect.disabled = false;
-
-    usernameInput.disabled = true;
-
-    emailInput.disabled = true;
+    ticketInput.disabled = true;
 
     fetchUserBtn.disabled = true;
 
     messageInput.focus();
-    
+
 }
 
 // ========================================================
@@ -255,7 +240,7 @@ function addUserMessage(message) {
 
                 <div class="sender">
 
-                    ${username}
+                    ${currentUser}
 
                 </div>
 
@@ -275,7 +260,7 @@ function addUserMessage(message) {
 
             <div class="avatar user-avatar">
 
-                ${username.charAt(0).toUpperCase()}
+                ${currentUser.charAt(0).toUpperCase()}
 
             </div>
 
